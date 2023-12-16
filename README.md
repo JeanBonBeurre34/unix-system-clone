@@ -1,5 +1,6 @@
 
 # Python Unix System Simulation
+![Optional Alt Text](unix-system-clone.png)
 
 
 ## Description
