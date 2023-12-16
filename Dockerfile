@@ -8,4 +8,4 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Run the Python script when the container launches
-CMD ["python", "./your_script_name.py"]
+CMD ["python", "./unix-system.py"]
