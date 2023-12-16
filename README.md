@@ -53,7 +53,7 @@ Once you run the script, you will enter an interactive shell-like environment wh
 
 This project includes a Dockerfile for easy setup and deployment in a Docker container. Follow these steps to build and run the simulation using Docker:
 
-### Build the Docker Image
+### Build the Docker Image in local from repository
 
 Navigate to the directory containing the Dockerfile and run the following command to build the Docker image:
 
@@ -61,6 +61,13 @@ Navigate to the directory containing the Dockerfile and run the following comman
 docker build -t unix-simulation .
 ```
 This command builds a Docker image named unix-simulation using the Dockerfile in the current directory.
+
+### Build the Docker Image from docker hub
+Just run the command to pull the docker image from docker hub
+```bash
+docker pull reg0l1/unix-simulati0n
+```
+This command builds a Docker image from docker hub.
 
 ### Run the container
 After the image has been built, run it with the following command:
