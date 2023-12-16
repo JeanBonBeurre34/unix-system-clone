@@ -1,7 +1,17 @@
-class SimpleUnixSystemWithCat:
+class SimpleUnixSystemWithHelp:
     def __init__(self):
         self.current_directory = "/"
         self.file_system = {"/": {}}
+        self.commands = {
+            "ls": "List directory contents ('-la' to show all files, including hidden).",
+            "cd": "Change the current directory ('..' to go up).",
+            "mkdir": "Create a new directory.",
+            "touch": "Create a new file.",
+            "echo": "Add text to a file (syntax: echo 'text' > filename).",
+            "cat": "Display the content of a file.",
+            "help": "Display available commands.",
+            "exit": "Exit the program."
+        }
 
     def run(self):
         while True:
@@ -23,6 +33,8 @@ class SimpleUnixSystemWithCat:
                 self.echo(command)
             elif command[0] == "cat" and len(command) > 1:
                 self.cat(command[1])
+            elif command[0] == "help":
+                self.help()
             else:
                 print("Invalid command or missing argument.")
 
@@ -101,7 +113,11 @@ class SimpleUnixSystemWithCat:
         else:
             print("File does not exist.")
 
+    def help(self):
+        for command, description in self.commands.items():
+            print(f"{command}: {description}")
+
 # Example usage
-system_with_cat = SimpleUnixSystemWithCat()
+system_with_help = SimpleUnixSystemWithHelp()
 # Uncomment the line below to run the system. Note that it will enter an interactive mode.
-system_with_cat.run()
+system_with_help.run()
